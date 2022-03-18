@@ -1,94 +1,51 @@
-import {
-  Input,
-  InputGroup,
-  InputGroupText,
-  Button,
-  Card,
-  CardGroup,
-  CardImg,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  CardText,
-} from "reactstrap";
+import React, { useState } from "react";
+import WeatherList from "./components/WeatherList";
 import "./App.scss";
-import Time from "./components/CurrentTime"
-
+import SearchBar from "./components/SearchBar";
+import Time from "./components/CurrentTime";
 
 function App() {
+  let inputValue = "";
+  const WEATHER_API = "bce7dbbaafc4400daab123331221803";
+  const [weatherData, setWeatherData] = useState([]);
+
+  async function showWeatherDays() {
+    const data = await fetch(
+      `https://api.weatherapi.com/v1/forecast.json?key=${WEATHER_API}&q=${inputValue}&days=7&aqi=no&alerts=no`
+    );
+    const result = await data.json();
+    setWeatherData(result.forecast.forecastday);
+  }
+
+  function searchCityItem(event) {
+    inputValue = event.target.value;
+  }
+
   return (
     <div className="weather-app">
       <h1 className="head-name">
-        Weather APP <h1 className="time"><Time/></h1>
+        Weather APP{" "}
+        <h1 className="time">
+          <Time />
+        </h1>
       </h1>
 
-      <InputGroup className="country-input">
-        <InputGroupText>Country</InputGroupText>
-        <Input />
-        <Button>Search</Button>
-      </InputGroup>
+      <div className="row mb-5">
+        <SearchBar showList={showWeatherDays} searchCity={searchCityItem} />
+      </div>
 
-      <CardGroup>
-        <Card body>
-          <CardImg
-            alt="Card image cap"
-            src="https://picsum.photos/318/180"
-            top
-            width="100%"
+      <div className="row mb-5">
+        {weatherData.map((item, index) => (
+          <WeatherList
+            key={index}
+            date={item.date}
+            iconImg={item.day.condition.icon}
+            text={item.day.condition.text}
+            minTemp={item.day.mintemp_c}
+            maxTemp={item.day.maxtemp_c}
           />
-          <CardBody>
-            <CardTitle tag="h5">Card title</CardTitle>
-            <CardSubtitle className="mb-2 text-muted" tag="h6">
-              Card subtitle
-            </CardSubtitle>
-            <CardText>
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </CardText>
-            <Button>Button</Button>
-          </CardBody>
-        </Card>
-        <Card body>
-          <CardImg
-            alt="Card image cap"
-            src="https://picsum.photos/318/180"
-            top
-            width="100%"
-          />
-          <CardBody>
-            <CardTitle tag="h5">Card title</CardTitle>
-            <CardSubtitle className="mb-2 text-muted" tag="h6">
-              Card subtitle
-            </CardSubtitle>
-            <CardText>
-              This card has supporting text below as a natural lead-in to
-              additional content.
-            </CardText>
-            <Button>Button</Button>
-          </CardBody>
-        </Card>
-        <Card body>
-          <CardImg
-            alt="Card image cap"
-            src="https://picsum.photos/318/180"
-            top
-            width="100%"
-          />
-          <CardBody>
-            <CardTitle tag="h5">Card title</CardTitle>
-            <CardSubtitle className="mb-2 text-muted" tag="h6">
-              Card subtitle
-            </CardSubtitle>
-            <CardText>
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This card has even longer content
-              than the first to show that equal height action.
-            </CardText>
-            <Button>Button</Button>
-          </CardBody>
-        </Card>
-      </CardGroup>
+        ))}
+      </div>
     </div>
   );
 }

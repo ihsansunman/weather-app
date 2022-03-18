@@ -1,22 +1,28 @@
-body {
-    background-image: url("./images/bg.jpg");
-   }
+html, body {
+  min-height: 100%;
+  background-image: url(./images/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  font-family: 'Roboto', sans-serif;
+  background-attachment: fixed;
+}
 
 .weather-app{
-    margin-top: 15px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 95%;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
 }
 
 .head-name{
-    color: #fff;
+  color: #fff;
 }
 
 .time{
-    float: right;
+  float: right;
 }
 
 .country-input{
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }

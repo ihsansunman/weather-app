@@ -1,22 +1,21 @@
-import  React, { useState , useEffect } from 'react'
+import React,{ useState, useEffect } from 'react';
 
-export const CurrentTime = () => {
 
-    var [date,setDate] = useState(new Date());
-    
+function Time() {
+    const [time, setTime] = useState();
+
     useEffect(() => {
-        var timer = setInterval(()=>setDate(new Date()), 1000 )
-        return function cleanup() {
-            clearInterval(timer)
-        }
-    
-    });
+        setInterval(() => {
+        const date = new Date();
+        setTime(date.toLocaleTimeString());
+        },1000)
+    }, [])
 
-    return(
-        <div>
-            <p> Current Time : {date.toLocaleTimeString()}</p>
+    return (
+        <div className="text-center text-white">
+            <h4>Current Time: {time}</h4>
         </div>
     )
 }
 
-export default CurrentTime
+export default Time;
