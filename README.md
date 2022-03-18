@@ -1,11 +1,48 @@
-# Weather App with React
+![License](https://img.shields.io/github/license/ihsansunman/weather-app?style=for-the-badge) ![issues](https://img.shields.io/github/issues/ihsansunman/weather-app?style=for-the-badge) ![stars](https://img.shields.io/github/stars/ihsansunman/weather-app?style=for-the-badge) ![REACTJS](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge) ![SASS](https://img.shields.io/badge/-SASS-c6538c?logo=sass&logoColor=white&style=for-the-badge)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-You can take your api key from this [link](https://www.weatherapi.com/).
-### In the project directory, you can run:
+# Weather APP
 
-* git clone https://github.com/ummuhankeles/react-weather-app.git
-* cd react-weather-app
-* npm install
-* npm start
+## Screenshots
+
+![Screenshot](https://raw.githubusercontent.com/ihsansunman/weather-app/master/src/images/screenshot.png)
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/ihsansunman/weather-app
+```
+
+Go to the project directory
+
+```bash
+  cd weather-app
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm start
+```
+
+## Packages
+
+- Reactstrap
+- SCSS
+
+## Authors
+
+- [@ihsansunman](https://www.github.com/ihsansunman)
+
+
+## Feedback
+
+If you have any feedback, please reach out to us at [ihsansunman@asnus.com](mailto:ihsansunman@asnus.com)

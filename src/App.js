@@ -3,6 +3,10 @@ import WeatherList from "./components/WeatherList";
 import "./App.scss";
 import SearchBar from "./components/SearchBar";
 import Time from "./components/CurrentTime";
+import {
+    CardGroup
+  } from "reactstrap";
+
 
 function App() {
   let inputValue = "";
@@ -30,11 +34,12 @@ function App() {
         </h1>
       </h1>
 
-      <div className="row mb-5">
+      <div>
         <SearchBar showList={showWeatherDays} searchCity={searchCityItem} />
       </div>
 
-      <div className="row mb-5">
+      <div>
+        <CardGroup>
         {weatherData.map((item, index) => (
           <WeatherList
             key={index}
@@ -45,6 +50,7 @@ function App() {
             maxTemp={item.day.maxtemp_c}
           />
         ))}
+        </CardGroup>
       </div>
     </div>
   );
