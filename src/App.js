@@ -3,10 +3,7 @@ import WeatherList from "./components/WeatherList";
 import "./App.scss";
 import SearchBar from "./components/SearchBar";
 import Time from "./components/CurrentTime";
-import {
-    CardGroup
-  } from "reactstrap";
-
+import { CardGroup } from "reactstrap";
 
 function App() {
   let inputValue = "";
@@ -28,7 +25,7 @@ function App() {
   return (
     <div className="weather-app">
       <h1 className="head-name">
-        Weather APP{" "}
+        Weather APP
         <h1 className="time">
           <Time />
         </h1>
@@ -40,16 +37,16 @@ function App() {
 
       <div>
         <CardGroup>
-        {weatherData.map((item, index) => (
-          <WeatherList
-            key={index}
-            date={item.date}
-            iconImg={item.day.condition.icon}
-            text={item.day.condition.text}
-            minTemp={item.day.mintemp_c}
-            maxTemp={item.day.maxtemp_c}
-          />
-        ))}
+          {weatherData.map((item, index) => (
+            <WeatherList
+              key={index}
+              date={item.date}
+              iconImg={item.day.condition.icon}
+              text={item.day.condition.text}
+              minTemp={item.day.mintemp_c}
+              maxTemp={item.day.maxtemp_c}
+            />
+          ))}
         </CardGroup>
       </div>
     </div>

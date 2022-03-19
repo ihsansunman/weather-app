@@ -1,28 +1,35 @@
-html, body {
+html,
+body {
   min-height: 100%;
   background-image: url(./images/bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-attachment: fixed;
 }
 
-.weather-app{
+.weather-app {
   margin-top: 15px;
   margin-left: auto;
   margin-right: auto;
   width: 95%;
 }
 
-.head-name{
+.head-name {
   color: #fff;
 }
 
-.time{
+.card-img {
+  width: 50% !important;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.time {
   float: right;
 }
 
-.country-input{
+.country-input {
   margin-bottom: 15px;
 }

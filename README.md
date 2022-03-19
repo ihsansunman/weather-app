@@ -5,7 +5,7 @@
 
 ## Screenshots
 
-![Screenshot](https://raw.githubusercontent.com/ihsansunman/weather-app/master/src/images/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/ihsansunman/weather-app/main/src/images/screenshot.png)
 
 ## Run Locally
 
@@ -35,6 +35,7 @@ Start the server
 
 ## Packages
 
+- Weather API
 - Reactstrap
 - SCSS
 
